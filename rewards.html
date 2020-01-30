@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+	<title></title>
+</head>
+<body>
+<p>For each month purchase $100 or more you will get 2 points for every dollar over $100 plus 50 points.</p>
+
+<form action="/action_page.php" id="frm1">Month 1 Purchases: <input name="fmonth" type="number" value="" /><br />
+Month 2 Purchases: <input name="smonth" type="number" value="" /><br />
+Month 3 Purchases: <input name="tmonth" type="number" value="" /><br />
+&nbsp;</form>
+
+<p>Click &quot;Rewards&quot; to calculate rewards.</p>
+
+<p><button onclick="myFunction()">Rewards</button></p>
+
+<p id="demo"></p>
+
+<p id="demo2">The total amount of awards is:</p>
+<script>
+function myFunction() {
+  var x = document.getElementById("frm1");
+  var first;
+  var second;
+  var third;
+  var total;
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    
+	if (x.elements[0].value >= 100) { first = ((x.elements[0].value -100) * 2) + 50;
+    } else { first = 0; }
+	if (x.elements[1].value >= 100) { second = ((x.elements[1].value -100) * 2) + 50;
+    } else { second = 0; }
+	if (x.elements[2].value >= 100) { third = ((x.elements[2].value -100) * 2) + 50;
+    } else { third = 0; }
+    total = first + second + third;
+  }
+  document.getElementById("demo2").innerHTML = "The first month award total = " +first+ "<br>The second month award total = " +second+ "<br>The third month award total = " +third+ "<br>The total amount of awards is: " +total;
+}
+</script></body>
+</html>
